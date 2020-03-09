@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Observable } from 'rxjs';
 import { Project, ProjectsService } from '@bb/core-data';
-// import { ProjectsFacade } from '@bb/core-state';
+import { ProjectsFacade } from '@bb/core-state';
 
 @Component({
   selector: 'bb-projects',
@@ -11,23 +11,20 @@ import { Project, ProjectsService } from '@bb/core-data';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-  // projects$: Observable<Project[]> = this.projectsFacade.allProjects$;
-  projects$: Project[] = [
-    {id: '1', title: 'Proj One', details: 'Some details', importanceLevel: 5}
-  ];
+  projects$: Observable<Project[]> = this.projectsFacade.allProject$;
   project: Project;
   formGroup: FormGroup;
 
   constructor(
     private projectsService: ProjectsService,
     private formBuilder: FormBuilder,
-    // private projectsFacade: ProjectsFacade
+    private projectsFacade: ProjectsFacade
   ) { }
 
   ngOnInit(): void {
     this.initForm();
-    // this.projectsFacade.loadProjects();
-    // this.projectsFacade.mutations$.subscribe(() => this.reset());
+    this.projectsFacade.loadProjects();
+    this.projectsFacade.mutations$.subscribe(() => this.reset());
   }
 
   reset() {
@@ -39,16 +36,16 @@ export class ProjectsComponent implements OnInit {
   }
 
   select(project: Project) {
-    // this.projectsFacade.selectProject(project.id);
+    this.projectsFacade.selectProject(project.id);
     this.formGroup.patchValue(project);
   }
 
   create() {
-    // this.projectsFacade.createProject(this.formGroup.value);
+    this.projectsFacade.createProject(this.formGroup.value);
   }
 
   update() {
-    // this.projectsFacade.updateProject(this.formGroup.value);
+    this.projectsFacade.updateProject(this.formGroup.value);
   }
 
   save(project: Project) {
@@ -60,7 +57,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   delete(project: Project) {
-    // this.projectsFacade.deleteProject(project);
+    this.projectsFacade.deleteProject(project);
   }
 
   initForm() {
