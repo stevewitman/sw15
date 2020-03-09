@@ -10,7 +10,7 @@
       },
       "root": "apps/sw15",
       "sourceRoot": "apps/sw15/src",
-      "prefix": "nx15",
+      "prefix": "sw15",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

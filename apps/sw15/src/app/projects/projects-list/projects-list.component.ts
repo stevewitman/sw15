@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'nx15-projects-list',
+  selector: 'bb-projects-list',
   templateUrl: './projects-list.component.html',
   styleUrls: ['./projects-list.component.scss']
 })
