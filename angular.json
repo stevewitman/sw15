@@ -10,7 +10,7 @@
       },
       "root": "apps/sw15",
       "sourceRoot": "apps/sw15/src",
-      "prefix": "sw15",
+      "prefix": "bb",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -139,7 +139,7 @@
       "projectType": "library",
       "root": "libs/material",
       "sourceRoot": "libs/material/src",
-      "prefix": "nx15",
+      "prefix": "bb",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -174,7 +174,7 @@
       "projectType": "library",
       "root": "libs/ui-toolbar",
       "sourceRoot": "libs/ui-toolbar/src",
-      "prefix": "nx15",
+      "prefix": "bb",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -209,7 +209,7 @@
       "projectType": "library",
       "root": "libs/core-data",
       "sourceRoot": "libs/core-data/src",
-      "prefix": "nx15",
+      "prefix": "bb",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -244,7 +244,7 @@
       "projectType": "library",
       "root": "libs/core-state",
       "sourceRoot": "libs/core-state/src",
-      "prefix": "nx15",
+      "prefix": "bb",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
